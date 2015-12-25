@@ -4,6 +4,11 @@
 ## This function creates a special "matrix" object that can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
+ matrixinverse <- NULL
+  set <- function(y) {
+    x <<- y
+    matrixinverse <<- NULL
+  }
   get <- function() x
   setinverse <- function(solve) matrixinverse <<- solve
   getinverse <- function() matrixinverse
